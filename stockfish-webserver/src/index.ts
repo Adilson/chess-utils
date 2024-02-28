@@ -10,7 +10,7 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-    res.send('Stockfish server!')
+    res.send('Stockfish server 16!')
 })
 
 //Setup controllers
