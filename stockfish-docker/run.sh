@@ -1,0 +1,1 @@
+docker run --name stockfish.16 -d -p 23249:23249 stockfish.16

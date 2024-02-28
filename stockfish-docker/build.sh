@@ -1,0 +1,1 @@
+docker build -t stockfish.16 ./
