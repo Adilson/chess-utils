@@ -1,3 +1,4 @@
 #Ignore .node_modules on git
 node_modules
 dist
+output
