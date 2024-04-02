@@ -1,21 +1,16 @@
+import React from 'react';
 import styles from './board.module.css';
+import { Baseboard } from './Baseboard';
+import { ChessboardProps } from './Props';
+import { SquaresLayer } from './SquaresLayer';
 
-const Chessboard = () => {
-  const board = [];
-
-  for (let i = 0; i < 8; i++) {
-    const row = [];
-    for (let j = 0; j < 8; j++) {
-      const cellClass = (i + j) % 2 === 0 ? `${styles.white}` : `${styles.black}`;
-      row.push(<div key={`${i}-${j}`} className={`${styles.cell} ${cellClass}`} />);
-    }
-    board.push(<div key={i} className={styles.row}>{row}</div>);
-  }
-
+export const rowNames = "abcdefgh";
+const Chessboard: React.FC<ChessboardProps> = ({ reversed, printCellNames, boardState }) => {
   return (
-    <div className={styles.chessboard}>
-      {board}
-    </div>
+    <svg className={styles.board} viewBox="0 0 80 80">
+      <Baseboard reversed={reversed} printCellNames={printCellNames} />
+      <SquaresLayer reversed={reversed} board={boardState.board} />
+    </svg>
   );
 };
 
